@@ -1,4 +1,3 @@
-import { KeyObjectType } from "crypto";
 import { arrayBuffer } from "stream/consumers";
 
 const fruits: string[] = ['Apple', 'Orange', 'Banana'];
