@@ -63,10 +63,9 @@ async function chartInpuit() {
                 value: obj[key]
             })
         }
-        console.log(obj);
     }
 
-    // console.log(arr[0].value.open, arr[1].value.high);
+    console.log(arr[0].value.open, arr[1].value.high);
     
 }
 
@@ -94,17 +93,19 @@ async function calculateOutputAmount(){
             cur = cur - curAskUsdt;
             btc = btc + volBtc;
         }else{
-            bufLeft = bufLeft + curAskUsdt;
+            bufLeft = bufLeft + curAskUsdt; //option Price for all asks order จะมีไม่มีก็ได้
         }
         // console.log('Now have: ' + cur);
         // console.log('Left USD: ' + bufLeft);
     }
+    let leftUsdt = cur/order.asks[0][0]
+    btc = btc + leftUsdt;
     console.log(`Output BTC: ${btc}`)
 
 }
 
 
 // getPrice();
-//chartInpuit();
+// chartInpuit();
 calculateOutputAmount();
 
